@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Press+Start+2P&display=swap');
+
+:root {
+  /* Pokemon Brand Colors */
+  --poke-red: #EE1515;
+  --poke-blue: #3B4CCA;
+  --poke-yellow: #FFDE00;
+  --poke-gold: #B3A125;
+  --poke-dark: #222224;
+  --poke-white: #F0F0F0;
+  
+  --dynamic-bg: var(--poke-red);
+  
+  --bg-color: var(--dynamic-bg);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border: #222224;
+  --text-primary: #222224;
+  --text-secondary: #666;
+  --accent: var(--poke-blue);
+  
+  /* Type Colors */
+  --type-normal: #A8A77A;
+  --type-fire: #EE8130;
+  --type-water: #6390F0;
+  --type-electric: #F7D02C;
+  --type-grass: #7AC74C;
+  --type-ice: #96D9D6;
+  --type-fighting: #C22E28;
+  --type-poison: #A33EA1;
+  --type-ground: #E2BF65;
+  --type-flying: #A98FF3;
+  --type-psychic: #F95587;
+  --type-bug: #A6B91A;
+  --type-rock: #B6A136;
+  --type-ghost: #735797;
+  --type-dragon: #6F35FC;
+  --type-dark: #705746;
+  --type-steel: #B7B7CE;
+  --type-fairy: #D685AD;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Subtle Pokeball inspired background */
+  background-image: 
+    linear-gradient(to bottom, var(--dynamic-bg) 50%, var(--poke-white) 50%);
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Center black line of pokeball */
+body::before {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: var(--poke-dark);
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+/* Center circle of pokeball */
+body::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: var(--poke-white);
+  border: 20px solid var(--poke-dark);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  box-shadow: inset 0 0 0 10px var(--poke-white), inset 0 0 0 25px var(--poke-dark);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--poke-white); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dynamic-bg); 
+  border-radius: 5px;
+  border: 2px solid var(--poke-dark);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--poke-dark); 
+}
